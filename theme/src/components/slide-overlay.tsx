@@ -26,25 +26,25 @@ export const SlideOverlay: React.FC<SlideOverlayProps> = (props) => {
  * https://theme-ui.com/packages/color#advanced-usage
  */
 const sxOverlay = (overlayColor: string, isColorful: boolean, theme: ThemePolaroid): SystemStyleObject => {
-  const gradientColorfulMobile = `linear-gradient(185deg, ${alpha(overlayColor, 0.4)(theme)} 0%, ${alpha(
-    overlayColor,
-    0.8
-  )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
+  // const gradientColorfulMobile = `linear-gradient(185deg, ${alpha(overlayColor, 0.4)(theme)} 0%, ${alpha(
+  //   overlayColor,
+  //   0.8
+  // )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
 
-  const gradientMobile = `linear-gradient(185deg, ${alpha(overlayColor, 0.0)(theme)} 0%, ${alpha(
-    overlayColor,
-    0.6
-  )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
+  // const gradientMobile = `linear-gradient(185deg, ${alpha(overlayColor, 0.0)(theme)} 0%, ${alpha(
+  //   overlayColor,
+  //   0.6
+  // )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
 
-  const gradientColorfulLaptop = `linear-gradient(190deg, ${alpha(overlayColor, 0.3)(theme)} 0%, ${alpha(
-    overlayColor,
-    0.6
-  )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
+  // const gradientColorfulLaptop = `linear-gradient(190deg, ${alpha(overlayColor, 0.3)(theme)} 0%, ${alpha(
+  //   overlayColor,
+  //   0.6
+  // )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
 
-  const gradientLaptop = `linear-gradient(190deg, ${alpha(overlayColor, 0.0)(theme)} 0%, ${alpha(
-    overlayColor,
-    0.4
-  )(theme)} 50%, ${alpha(overlayColor, 0.6)(theme)} 100%)`;
+  // const gradientLaptop = `linear-gradient(190deg, ${alpha(overlayColor, 0.0)(theme)} 0%, ${alpha(
+  //   overlayColor,
+  //   0.4
+  // )(theme)} 50%, ${alpha(overlayColor, 0.6)(theme)} 100%)`;
 
   return {
     position: "absolute",
@@ -52,9 +52,11 @@ const sxOverlay = (overlayColor: string, isColorful: boolean, theme: ThemePolaro
     left: 0,
     width: "100%",
     height: "100%",
-    backgroundImage: isColorful ? gradientColorfulMobile : gradientMobile,
-    [`@media ${theme.mediaQuery.laptopS}`]: {
-      backgroundImage: isColorful ? gradientColorfulLaptop : gradientLaptop,
-    },
+    // backgroundImage: isColorful ? gradientColorfulMobile : gradientMobile,
+    // [`@media ${theme.mediaQuery.laptopS}`]: {
+    //   backgroundImage: isColorful ? gradientColorfulLaptop : gradientLaptop,
+    // },
+    backgroundImage: `linear-gradient(185deg, black 0%, black} 50%, black 100%)`,
+    backgroundColor: theme.colors?.veronica.dark,
   };
 };

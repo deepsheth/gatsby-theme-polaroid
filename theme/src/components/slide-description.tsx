@@ -13,7 +13,10 @@ export type SlideDescriptionProps = {
 export const SlideDescription: React.FC<SlideDescriptionProps> = (props) => {
   const { className, highlightColor = "highlight", isExpanded = false, shouldAdjustWidth = false } = props;
   return (
-    <Text className={className} sx={sxDescription(highlightColor, isExpanded, shouldAdjustWidth)}>
+    <Text
+      className={className}
+      // sx={sxDescription(highlightColor, isExpanded, shouldAdjustWidth)}
+    >
       {props.children}
     </Text>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import Img, { GatsbyImageFluidProps } from "gatsby-image";
+// import Img, { GatsbyImageFluidProps } from "gatsby-image";
 import { useThemeUI } from "theme-ui";
 
 export type SlideImageProps = GatsbyImageFluidProps & {
@@ -30,5 +30,6 @@ export const SlideImage: React.FC<SlideImageProps> = (props) => {
     ...imgStyle,
   };
 
-  return <Img fluid={fluid} style={styleWithDefaults} imgStyle={imgStyleWithDefaults} {...otherProps} />;
+  // return <Img fluid={fluid} style={styleWithDefaults} imgStyle={imgStyleWithDefaults} {...otherProps} />;
+  return <img style={styleWithDefaults} imgStyle={imgStyleWithDefaults} {...otherProps} />;
 };
