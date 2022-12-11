@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": [
     "theme",
-    "demo"
+    "demo",
+    "nextjs-demo"
   ],
   "scripts": {
     "build": "yarn workspace example build",
