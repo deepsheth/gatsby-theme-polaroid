@@ -66,7 +66,8 @@ export const Layout: React.FC<LayoutProps> = (props) => {
           },
         })}
       />
-      <SEO />
+      {/* Not supported without Gatsby */}
+      {/* <SEO /> */}
       <SkipNavLink>Skip to content</SkipNavLink>
       <Header isTransparent={hasTransparentHeader} />
       <Container variant={hasFullWidthContainer ? "containerFull" : "container"}>

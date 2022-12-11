@@ -8,12 +8,13 @@ export type FooterBodyProps = {
 };
 
 export const FooterBody: React.FC<FooterBodyProps> = () => {
-  const { siteTitle } = useSiteMetadata();
+  // const { siteTitle } = useSiteMetadata();
 
   return (
     <div>
       <p>
-        &copy; {new Date().getFullYear()} {siteTitle}. All rights reserved.
+        {/* &copy; {new Date().getFullYear()} {siteTitle}. All rights reserved. */}
+        &copy; {new Date().getFullYear()}. All rights reserved.
       </p>
       <p>
         <small>

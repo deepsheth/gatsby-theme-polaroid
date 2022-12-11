@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { jsx, Box, NavLink } from "theme-ui";
 import { Link } from "gatsby";
 import { SystemStyleObject } from "@styled-system/css";
-import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
 import { headerMenuItems } from "../data/header-menu-items";
 
@@ -14,7 +13,7 @@ export type HeaderMenuProps = {
 };
 
 export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
-  const { basePath } = useMinimalBlogConfig();
+  // const { basePath } = useMinimalBlogConfig();
 
   return (
     <Box sx={sxBox(props.isOpen)}>
@@ -23,9 +22,8 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
           const { isVisibleMobile, isVisibleTablet, isVisibleLaptop } = menuItem;
           const isExternalLink = !!menuItem.href;
           const navLinkProps = {
-            ...(isExternalLink
-              ? { href: menuItem.href }
-              : { as: Link, to: replaceSlashes(`/${basePath}/${menuItem.slug}`) }),
+            ...(isExternalLink ? { href: menuItem.href } : { as: Link, to: replaceSlashes(`/${menuItem.slug}`) }),
+            // : { as: Link, to: replaceSlashes(`/${basePath}/${menuItem.slug}`) }),
           };
           return (
             <NavLink

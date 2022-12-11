@@ -2,8 +2,6 @@
 /** @jsx jsx */
 import { Link } from "gatsby";
 import { jsx } from "theme-ui";
-import { replaceSlashes } from "../utils";
-import { useSiteMetadata, useMinimalBlogConfig } from "../hooks";
 import { SystemStyleObject } from "@styled-system/css";
 import imgLogoDark from "../assets/logo-dark.svg";
 import imgLogoLight from "../assets/logo-light.svg";
@@ -13,18 +11,21 @@ export type HeaderLogoProps = {
 };
 
 export const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
-  const { siteTitle } = useSiteMetadata();
-  const { basePath } = useMinimalBlogConfig();
+  // const { siteTitle } = useSiteMetadata();
+  // const { basePath } = useMinimalBlogConfig();
   const { isTextDark } = props;
 
   return (
     <Link
-      to={replaceSlashes(`/${basePath}`)}
-      aria-label={`${siteTitle} - Back to home`}
+      // to={replaceSlashes(`/${basePath}`)}
+      to={"/"}
+      // aria-label={`${siteTitle} - Back to home`}
+      // aria-label={`${siteTitle} - Back to home`}
       sx={{ color: `heading`, textDecoration: `none`, height: "100%" }}
     >
       <h1 sx={sxH1}>
-        <img src={isTextDark ? imgLogoDark : imgLogoLight} alt={siteTitle} />
+        {/* <img src={isTextDark ? imgLogoDark : imgLogoLight} alt={siteTitle} /> */}
+        <img src={isTextDark ? imgLogoDark : imgLogoLight} />
       </h1>
     </Link>
   );

@@ -13,7 +13,7 @@ export type HeaderNavProps = {
 
 export const HeaderNav: React.FC<HeaderNavProps> = (props) => {
   const { isTextDark } = props;
-  const { basePath } = useMinimalBlogConfig();
+  // const { basePath } = useMinimalBlogConfig();
 
   return (
     <nav sx={sxNav}>
@@ -21,9 +21,8 @@ export const HeaderNav: React.FC<HeaderNavProps> = (props) => {
         const { isVisibleMobile, isVisibleTablet, isVisibleLaptop } = navItem;
         const isExternalLink = !!navItem.href;
         const navLinkProps = {
-          ...(isExternalLink
-            ? { href: navItem.href }
-            : { as: Link, to: replaceSlashes(`/${basePath}/${navItem.slug}`) }),
+          ...(isExternalLink ? { href: navItem.href } : { as: Link, to: replaceSlashes(`/${navItem.slug}`) }),
+          // : { as: Link, to: replaceSlashes(`/${basePath}/${navItem.slug}`) }),
         };
         return (
           <NavLink
